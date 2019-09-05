@@ -8,13 +8,97 @@ namespace Examen1erParcial
 {
     class Pelicula
     {
-        public string Titulo;
-        public string Año;
-        public string Director;
-        public string Genero;
-        public string Origen;
-        public string Minutos;
-        public string Rating;
-        public string Sinopsis;
+        //Auto Properties
+        public string Titulo { get; set; }
+        public string Director { get; set; }
+        public string Genero { get; set; }
+        public string Origen { get; set; }
+        public string Sipnosis { get; set; }
+
+        //Properties
+        private int _estreno;
+        public int Estreno
+        {
+            get
+            {
+                return _estreno;
+            }
+
+            set
+            {
+                if ((value > 1799) && (value < 2020))
+                {
+                    _estreno = value;
+                }
+                else
+                {
+                    throw new Exception("Año fuera de rango");
+                }
+            }
+        }
+        private int _duracion { get; set; }
+        public int Duracion
+        {
+            get
+            {
+                return _duracion;
+            }
+
+            set
+            {
+                if ((value > -1))
+                {
+                    _duracion = value;
+                }
+                else
+                {
+                    throw new Exception("Duracion invalida");
+                }
+            }
+        }
+        private int _rate;
+        public int Rate
+        {
+            get
+            {
+                return _rate;
+            }
+
+            set
+            {
+                if ((value > -1) && (value < 11))
+                {
+                    _rate = value;
+                }
+                else
+                {
+                    throw new Exception("Rating no valido");
+                }
+            }
+        }
+
+        public Pelicula()
+        {
+            Titulo = "Desconocido";
+            Estreno = 2019;
+            Director = "Desconocido";
+            Genero = "Desconocido";
+            Origen = "Desconocido";
+            Duracion = 0;
+            Rate = 5;
+            Sipnosis = "Desconocido";
+        }
+
+        public Pelicula(string titulo, int estreno, string director, string genero, string origen, int duracion, int rate, string sipnosis)
+        {
+            Titulo = titulo;
+            Estreno = estreno;
+            Director = director;
+            Genero = genero;
+            Origen = origen;
+            Duracion = duracion;
+            Rate = rate;
+            Sipnosis = sipnosis;
+        }
     }
 }

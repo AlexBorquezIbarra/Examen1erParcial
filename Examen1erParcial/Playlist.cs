@@ -8,22 +8,22 @@ namespace Examen1erParcial
 {
     class Playlist
     {
-        public string Titulo;
-        public string Descripcion;
-        public List<Pelicula> Peliculas;
+        public string TituloP { get; set; }
+        public string Descripcion { get; set; }
+        public List<Pelicula> peliculas;
 
-        public Playlist ()
+        public Playlist()
         {
-            Titulo = "Desconcido";
+            TituloP = "Desconocido";
             Descripcion = "Desconocido";
-            Peliculas = new List<Pelicula>();
+            peliculas = new List<Pelicula>();
         }
 
-        public Playlist(string titulo)
+        public Playlist(string tituloP, string descripcion)
         {
-            Titulo = titulo;
-            Descripcion = "Desconocido";
-            Peliculas = new List<Pelicula>();
+            TituloP = tituloP;
+            Descripcion = descripcion;
+            peliculas = new List<Pelicula>();
         }
     }
 }
